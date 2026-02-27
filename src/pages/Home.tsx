@@ -6,8 +6,15 @@ import { GallerySection } from '../components/sections/GallerySection';
 import { NewsSection } from '../components/sections/NewsSection';
 import { ComingSoonSection } from '../components/sections/ComingSoonSection';
 import { Footer } from '../components/layout/Footer';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 export const Home = () => {
+    usePageSEO({
+        title: 'Home',
+        description: 'Astride — indie dark pop artist. Explore music, lyrics, news and more from the rising voice in the dark.',
+        url: '/'
+    });
+
     return (
         <div className="flex flex-col min-h-screen bg-astrideBlack text-white">
             <Navbar />

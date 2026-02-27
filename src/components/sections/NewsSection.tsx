@@ -2,11 +2,32 @@ import { Card, CardBody } from "@heroui/react";
 import { Link } from "react-router-dom";
 
 export const LATEST_NEWS = [
-    { id: 1, date: "FEBRUARY 27, 2026", category: "MUSIC", title: "Astride Releases Brutal New Single 'In The Dark'", excerpt: "The new pop-rock metal infused single is shaking the underground scene..." },
-    { id: 2, date: "FEBRUARY 15, 2026", category: "TOUR", title: "European Tour Dates Teased for Late 2026", excerpt: "After a monumental US run, Astride hints at bringing 'The Void' to Europe." },
-    { id: 3, date: "JANUARY 10, 2026", category: "STUDIO", title: "Inside The Void: Recording Sessions Leaked", excerpt: "Exclusive behind-the-scenes look at the rigorous studio marathon process." },
-    { id: 4, date: "DECEMBER 05, 2025", category: "MERCH", title: "Winter Drop: The 'Resilience' Collection Sold Out", excerpt: "In record time, the exclusive winter apparel collection disappeared." },
-    { id: 5, date: "NOVEMBER 20, 2025", category: "AWARD", title: "Best New Rock Vocalist Nomination", excerpt: "Astride sweeps nominations in the underground modern grunge categories." }
+    {
+        id: 1,
+        date: "FEBRUARY 26, 2026",
+        category: "MUSIC",
+        title: "The End of Silence: Astride Debuts with 'In the Dark'",
+        excerpt: "The singer's debut single transforms emotional chaos into an arena anthem about finding 'gold' in the middle of absolute nothingness.",
+        body: (
+            <>
+                <p>If you thought alternative rock was doomed to another decade of generic choruses and lazy synthesizers, Astride just kicked the door down. Released globally on February 26th, the highly anticipated debut single <strong className="text-astrideCyan">"In the Dark"</strong> is already available on all streaming platforms (yes, even on YouTube, for those who still like to watch the visualizer on repeat).</p>
+                <p>The track isn't just an introduction to the artist's impeccable voice — which goes from a vulnerable whisper to a tearing drive without breaking a sweat — but also a brutally honest love letter. The lyrics address that exact moment when the world seems to have crashed with the blue screen of death, and someone appears to force a reboot.</p>
+
+                <h3 className="text-astrideCyan font-bold text-2xl mt-8 mb-4 uppercase tracking-wider">The Engineering of Chaos</h3>
+                <p>Behind the polished production, there was a true development hell. Sources close to the production claim that finding the perfect arrangement for "In the Dark" required a level of effort and iteration that would make any project manager cry. The chorus — the backbone of the song — was rewritten and restructured multiple times. The core idea, however, survived all cuts: the metaphor of a love that is the <strong className="text-primary">"gold in the dark"</strong>.</p>
+
+                <p>And the persistence paid off. When Astride sings the verses:</p>
+                <blockquote className="border-l-4 border-primary pl-6 my-8 italic text-white/90 text-xl md:text-2xl drop-shadow-[0_0_10px_rgba(249,168,38,0.2)]">
+                    "You're the gold in the dark, / Higher than the stars, / Burning through my heart."
+                </blockquote>
+
+                <p>It becomes clear that the song was written for the love of her life. It's not about a magical fairy tale crush, but about the anchor that stops you from drowning when gravity fails. It's about who makes "the ordinary feel like a victory".</p>
+
+                <h3 className="text-astrideMagenta font-bold text-2xl mt-8 mb-4 uppercase tracking-wider">Verdict</h3>
+                <p>"In the Dark" delivers a nostalgic atmosphere of icons like Evanescence and Linkin Park, but with a sonic architecture that is undeniably 2026. Astride isn't asking for permission to enter the scene; she's demanding attention. If this is just the first release, the foundations of pop/rock are about to undergo a serious stress test.</p>
+            </>
+        )
+    }
 ];
 
 export const NewsSection = () => {

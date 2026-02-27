@@ -1,8 +1,18 @@
 import { Navbar } from '../components/layout/Navbar';
 import { Footer } from '../components/layout/Footer';
 import { LATEST_NEWS } from '../components/sections/NewsSection';
+import { useState } from 'react';
+import { usePageSEO } from '../hooks/usePageSEO';
 
 export const NewsPage = () => {
+    const [expandedArticleId, setExpandedArticleId] = useState<number | null>(null);
+
+    usePageSEO({
+        title: 'News',
+        description: 'Latest updates, stories and announcements from Astride. Stay in the dark.',
+        url: '/news'
+    });
+
     return (
         <div className="flex flex-col min-h-screen bg-astrideBlack text-white">
             <Navbar />
@@ -37,18 +47,20 @@ export const NewsPage = () => {
                                     {news.excerpt}
                                 </p>
 
-                                {/* Simulated Blog Content. Using standard text for mock detail. */}
-                                <div className="text-white/40 font-light mt-4 space-y-4">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum.
-                                    </p>
-                                    <p>
-                                        Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero.
-                                    </p>
-                                </div>
+                                {/* Full Article Content - Only shown if expanded */}
+                                {expandedArticleId === news.id && (
+                                    <div className="text-white/80 font-light mt-8 space-y-6 text-base md:text-lg animate-appearance-in">
+                                        {news.body}
+                                    </div>
+                                )}
 
                                 <div className="mt-8 flex items-center justify-between border-t border-white/5 pt-6">
-                                    <a href="#" className="font-bold text-astrideMagenta uppercase tracking-[0.2em] hover:text-white transition-colors">Read Full Article</a>
+                                    <button
+                                        onClick={() => setExpandedArticleId(expandedArticleId === news.id ? null : news.id)}
+                                        className="font-bold text-astrideMagenta uppercase tracking-[0.2em] hover:text-white transition-colors"
+                                    >
+                                        {expandedArticleId === news.id ? "Close Article" : "Read Full Article"}
+                                    </button>
                                     <div className="flex gap-4">
                                         <span className="text-white/30 text-xs tracking-widest uppercase">Share</span>
                                         <span className="w-1 h-3 bg-astrideCyan rotate-12" />
